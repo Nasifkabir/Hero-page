@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stress-Free Website</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.1.2/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            background-image: url('images/background.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            margin: 0;
+            overflow: hidden; 
+        }
+        .main-container {
+            display: flex;
+            flex-direction: column;
+            height: 100vh; 
+            justify-content: space-between;
+        }
+        .modal-image {
+            height: 100%; 
+            width: 100%; 
+            object-fit: contain; 
+            z-index: -1; 
+        }
+    </style>
+</head>
+<body class="bg-cover bg-center bg-no-repeat font-sans text-white">
+
+    <!-- Main Container -->
+    <div class="main-container">
+        <!-- Navbar -->
+        <nav class="w-full flex justify-between items-center py-4 px-6 md:px-12">
+            <!-- Logo Image -->
+            <div>
+                <img src="images/logo.png" alt="Stress Free Logo" class="h-10 md:h-16">
+            </div>
+            
+            <!-- Hamburger Button (for mobile view) -->
+            <div class="md:hidden">
+                <button id="hamburger" class="text-white focus:outline-none">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+            
+            <!-- Navbar Links (Hidden by default on mobile) -->
+            <div id="nav-links" class="hidden md:flex space-x-8 bg-white rounded-full px-5 py-0 flex items-center">
+                <a href="#" class="text-blue-800 font-black px-4 py-2 rounded-full border-4 border-yellow-500 text-lg"><i>HOME</i></a>
+                <a href="#" class="text-blue-800 font-normal px-3 py-1 hover:border-b-2 hover:text-yellow-500">ABOUT</a>
+                <a href="#" class="text-blue-800 font-normal px-3 py-1 hover:border-b-2 hover:text-yellow-500">GALLERY</a>
+                <a href="#" class="text-blue-800 font-normal px-3 py-1 hover:border-b-2 hover:text-yellow-500">MENU</a>
+                <a href="#" class="text-blue-800 font-normal px-3 py-1 hover:border-b-2 hover:border-yellow-400">CONTACT</a>
+            </div>
+
+            <!-- Mobile Navigation (Hamburger Menu) -->
+            <div id="mobile-nav" class="md:hidden absolute top-16 left-0 w-full bg-white shadow-md p-4 hidden">
+                <a href="#" class="block text-blue-800 font-normal px-4 py-2">HOME</a>
+                <a href="#" class="block text-blue-800 font-normal px-4 py-2">ABOUT</a>
+                <a href="#" class="block text-blue-800 font-normal px-4 py-2">GALLERY</a>
+                <a href="#" class="block text-blue-800 font-normal px-4 py-2">MENU</a>
+                <a href="#" class="block text-blue-800 font-normal px-4 py-2">CONTACT</a>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <div class="flex flex-col md:flex-row md:gap-28 items-center justify-between flex-grow w-full max-w-6xl px-6 md:px-12 relative z-10">
+            
+            <div class="text-left md:w-1/2 space-y-6 md:ml-36 z-20">
+                <h1 class="text-5xl md:text-8xl font-bold leading-tight">
+                    It's time<br>to relax
+                </h1>
+                <p class="text-xl font-bold md:text-2xl">Say no to anxiety.</p>
+            </div>
+
+            <div class="text-right md:w-1/3 lg:w-1/4 space-y-6 text-gray-300 text-lg md:text-xl md:ml-32 z-20">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.</p>
+            </div>
+        </div>
+
+        <!-- Modal Image Section -->
+        <div class="absolute inset-0 flex justify-center items-center z-0">
+            <img src="images/modal.png" alt="Relaxing Woman" class="modal-image">
+        </div>
+
+        <!-- Footer -->
+        <footer class="py-4 flex justify-between items-center w-full px-6 md:px-12 z-10">
+            <div class="flex space-x-4 text-white">
+                <a href="#" class="hover:text-yellow-400"><i class="fab fa-instagram fa-lg"></i></a>
+                <a href="#" class="hover:text-yellow-400"><i class="fab fa-facebook fa-lg"></i></a>
+                <a href="#" class="hover:text-yellow-400"><i class="fab fa-twitter fa-lg"></i></a>
+            </div>
+
+            <!-- "More Info" button -->
+            <button class="text-white font-semibold py-2 px-6 rounded-full bg-blue-900 hover:bg-white hover:text-blue-900 transition duration-300">
+                More Info
+            </button>
+        </footer>
+
+    </div>
+
+    <!-- JavaScript-->
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const mobileNav = document.getElementById('mobile-nav');
+        
+        // Toggle the mobile menu visibility when hamburger is clicked
+        hamburger.addEventListener('click', () => {
+            mobileNav.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
